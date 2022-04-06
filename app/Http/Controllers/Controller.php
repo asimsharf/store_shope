@@ -19,11 +19,11 @@ class Controller extends BaseController
             ])->header('Content-Type', 'Application/json');
     }
 
-    public function error($code, $message)
+    public function error($code, $error)
     {
         return response()->json([
                 'code' => $code,
-                'message' => $message,
+                'error' => $error,
             ])->header('Content-Type', 'Application/json');
     }
 

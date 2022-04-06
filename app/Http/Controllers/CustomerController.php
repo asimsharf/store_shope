@@ -60,15 +60,9 @@ class CustomerController extends Controller
         $user->password = Hash::make($request->password);
 
         if($user->save()){
-            return response()->json([
-                'success'=>true,
-                'status'=>200,
-            ]);
+            return $this->done(1,  'Successfully customer created.');
         }else{
-            return response()->json([
-                'success'=>false,
-                'status'=>200,
-            ]);
+            return $this->done(1,  'Customer not created.');
         }
     }
 
